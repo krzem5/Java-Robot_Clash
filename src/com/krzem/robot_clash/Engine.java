@@ -27,7 +27,6 @@ public class Engine extends Constants{
 	public void update(){
 		if (this.b.w!=0){
 			if (this.cls.KEYBOARD.pressed(82)){
-				System.out.println(this.b.w);
 				this.b=new Board(this.cls,this);
 				this._gen_board();
 				this.t=1;

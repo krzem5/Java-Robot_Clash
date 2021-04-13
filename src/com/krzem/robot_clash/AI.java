@@ -42,13 +42,16 @@ public class AI extends Constants{
 				this._minmax_root(pm.get(i),pmb.get(i));
 			}
 			int[] bm=null;
-			double bms=-Double.MAX_VALUE;
+			double bms=0;
 			for (Map.Entry<int[],Double> e:this._scl.entrySet()){
 				double sc=(double)e.getValue();
-				if (sc>=bms){
+				if (bm==null||sc>=bms){
 					bms=sc;
 					bm=e.getKey();
 				}
+			}
+			if (bm==null){
+				throw new NullPointerException();
 			}
 			this.e.b.move(this.e.b.b[bm[1]][bm[0]],bm[2],bm[3]);
 			this.e.t=-this.e.t;
@@ -106,7 +109,6 @@ public class AI extends Constants{
 	private Board _clone_make_move(Board b,int[] mv){
 		b=this._clone_b(b);
 		b.move(b.b[mv[1]][mv[0]],mv[2],mv[3]);
-		// System.out.println(b.w);
 		if (b.w!=0){
 			for (int j=0;j<4;j++){
 				for (int i=0;i<3;i++){
