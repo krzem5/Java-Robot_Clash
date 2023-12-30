@@ -19,7 +19,7 @@ public class Constants{
 
 	public static final Color BG_COLOR=Constants.color("#ffffff");
 
-	public static final int AI_MINMAX_DEPTH=8;
+	public static final int AI_MINMAX_DEPTH=7;
 
 	public static final Color BOARD_BG_COLOR=Constants.color("#af734b");
 	public static final int BOARD_TILE_SIZE=400;
